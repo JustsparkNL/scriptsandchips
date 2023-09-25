@@ -9,6 +9,7 @@ Deploy het als een script zodat het uitgevoerd wordt voordat de apps worden gein
 
 **Run in 64-bit context - gebruik NIET het script van bovengenoemde bron.**
 
+```PowerShell
 $DebloatFolder = "C:\ProgramData\Debloat"
 If (Test-Path $DebloatFolder) {
     Write-Output "$DebloatFolder exists. Skipping."
@@ -29,3 +30,6 @@ Invoke-WebRequest `
 -Headers @{"Cache-Control"="no-cache"}
 
 invoke-expression -Command $templateFilePath
+```
+
+Debug informatie zal in de map C:\ProgramData\Debloat\Debloat.log worden geplaatst.
